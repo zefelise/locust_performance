@@ -3,8 +3,8 @@ import grpc
 from grpc.framework.common import cardinality
 from grpc.framework.interfaces.face import utilities as face_utilities
 
-import api_pb2 as api__pb2
-import quantumdataservice_pb2 as quantumdataservice__pb2
+import protos.api_pb2 as api__pb2
+import protos.quantumdataservice_pb2 as quantumdataservice__pb2
 
 
 class QuantumDataServiceStub(object):
