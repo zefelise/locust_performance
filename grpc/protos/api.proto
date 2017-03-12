@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.autodesk.thunderstorm.api;
+
+message Value {
+	Atom atom = 1;
+	repeated Value values = 2;
+}
+
+message Atom {
+	string type_name = 1;
+	bytes data = 2;
+	uint64 unique_id = 3;
+	string preview = 4;
+}

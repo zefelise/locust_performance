@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+// From TS
+import "api.proto";
+
+package Autodesk.Quantum.DataService;
+
+message DataId {
+    string data_id = 1;
+}
+
+message Empty {
+}
+
+message WriteRequest {
+    string data_id = 1;
+    com.autodesk.thunderstorm.api.Atom data = 2;
+}
+
+message ReadRequest {
+    string data_id = 1;
+}
+
+message TestRequest {
+    int32 input1 = 1;
+    int32 input2 = 2;
+}
+
+message TestResponse {
+    int32 output = 2;
+}
+
+service QuantumDataService {
+    rpc add (TestRequest) returns (TestResponse);
+    rpc create (Empty) returns (DataId);
+    rpc write (WriteRequest) returns (DataId);
+    rpc read (ReadRequest) returns (com.autodesk.thunderstorm.api.Atom);
+    rpc delete (ReadRequest) returns (DataId);
+}
